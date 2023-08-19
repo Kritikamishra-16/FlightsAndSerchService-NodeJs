@@ -50,7 +50,7 @@ const create = async (req,res)=>{
  */
 const destroy =async (req, res)=>{
     try{
-        const response=await cityService.deleteCity(req.params);
+        const response=await cityService.deleteCity(req.params.id);
         return res.status(201).json({
             data: response,
             success: true,

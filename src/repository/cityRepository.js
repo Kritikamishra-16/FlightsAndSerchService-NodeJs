@@ -31,11 +31,16 @@ class CityRepository{
 
     async updateCity(cityId, data){ //data= {name: "Prayagraj"}
         try{
-            const city=await City.update(data,{
-                where:{
-                    id:cityId
-                }
-            });
+            //this below approach also works but will not return updated object 
+            //but if you are using PgSql then you can use returning: true.
+            // const city=await City.update(data,{
+            //     where:{
+            //         id:cityId
+            //     },
+            // });
+            const city=await City.findByPk(cityId);
+            city.name=data.name;
+            await city.save();
             return city;
         }catch(error){
             console.log("Something went wrong in the repository layer");
