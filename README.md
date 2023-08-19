@@ -33,7 +33,7 @@
     - One airport can have many flights ,but one flight belongs to one airport
     
 
-## Tables 
+## Tables
 
   ### City -> id, name, created_at, updated_at
   ### Airport-> id, name, address, city_id, created_at, updated_at
