@@ -50,3 +50,4 @@ npx sequelize seed:generate --name add-airports
 Using this command all seeders file will startgetting seeded
 npx sequelize db:seed:all
 ```
+
